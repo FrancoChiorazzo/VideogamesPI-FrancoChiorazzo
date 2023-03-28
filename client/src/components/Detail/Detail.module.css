@@ -1,0 +1,49 @@
+/* Card styles  */
+body{
+    background-color: #009966;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+}
+
+.container{
+    width: 500px;
+    height: max-content;
+    clip-path: polygon(50% 0%, 100% 31%, 100% 100%, 0 100%, 0 31%);
+    background-color: #D8C3A5;
+    box-shadow: 50px 50px 100px rgba(0,0,0,0.5);
+    background: linear-gradient(45deg, #FFC371, #ff5f6c88);
+    margin:auto;
+    display:block;
+}
+@media(max-width: 600px){.container{ width: 200px; height: 300px;   
+}}
+.pictures{
+    width: 500px;
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+h3{
+    text-transform: capitalize;
+    
+}
+
+.titleDetail{
+    text-transform: uppercase;
+    color: rgb(222, 221, 220);
+    text-shadow: 2px 2px 4px #000000;
+    margin: auto;
+    width: auto;
+}
+
+
+
+.genres{
+    color: black;
+    font-family: 'Times New Roman';
+}
+
+.buttonBack{
+    float: left;
+    margin: 3%;
+    width: 5%;
+}

@@ -1,0 +1,13 @@
+.textFormat{
+    text-shadow: 0px 0px 10px white;
+    color: whitesmoke;
+    animation: example 1s infinite alternate;    
+}
+@keyframes example {
+    from {text-shadow: 0px 0px 10px white;}
+    to {text-shadow: 0px 0px 30px white;}
+  }
+
+  .startImage{
+    width: "600px";
+  }

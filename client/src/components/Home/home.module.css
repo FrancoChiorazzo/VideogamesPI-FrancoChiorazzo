@@ -1,0 +1,5 @@
+.CardsByPage{
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+}

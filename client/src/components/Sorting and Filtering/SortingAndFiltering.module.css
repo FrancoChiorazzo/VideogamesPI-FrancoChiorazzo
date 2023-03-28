@@ -1,0 +1,81 @@
+.pagination button {
+    background-color: whitesmoke; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: rgb(53, 53, 53); /* White text */
+    padding: 10px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    margin-bottom: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .clearfilter{
+    display: flex;
+    align-items: center;
+    justify-content:space-between
+  }
+  .clearfilter button{
+    margin-top: 5px;
+    margin-bottom: 5px;    
+    border: 2px solid rgb(255, 255, 255); /* white border */
+    background-color:transparent;
+    color: whitesmoke;
+    border-radius: 12px 0px 0px 12px;
+  }
+
+  .clearfilter button:hover:not(.active) {
+    background-color: white;
+    color: #09460b;
+}
+
+.pagination button:focus {
+    background-color: #09460b;
+    color: white;
+  }
+
+.pagination button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .pagination button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .pagination button:hover:not(.active) {
+    background-color: #4caf4fbc;
+    color: white;
+}
+
+.ButtonsContainer button{
+    background-color: rgb(255, 197, 217);
+    border: none;
+    height: 25px;
+    display: flexbox;
+    box-shadow: 0 8px 0px 0 rgba(0,0,0,0.2)
+
+}
+
+.ButtonsContainer button:hover:not(.active) {
+    background-color: #4caf4fbc;
+    color: white;
+}
+
+button {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button.selected {
+    background-color: #4caf4fbc;
+    color: #fff;
+  }
+
+.dropdown{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    width: 200px;
+    box-sizing: border-box;
+  }

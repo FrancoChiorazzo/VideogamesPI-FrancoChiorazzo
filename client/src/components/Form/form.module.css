@@ -1,0 +1,198 @@
+.Form {
+    display: flex;
+    justify-content: space-between;
+    align-items:stretch;
+    min-height: 100vh;
+  }
+
+.containerForm {
+    flex: 1;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 800px;
+  }
+  .containerForm  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+.containerForm label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .containerForm input[type="text"],
+  .containerForm input[type="url"],
+  .containerForm input[type="date"],
+  .containerForm select,
+  textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .containerForm input[type="range"] {
+    margin-top: 10px;
+  }
+  
+  .containerForm legend {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .containerForm span {
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  .containerForm button {
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .containerForm button:hover {
+    background-color: #3e8e41;
+  }
+
+ #submit button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
+  
+  #genreSelector {
+    display: block;
+    margin-top: 20px;
+  }
+  
+  .containerForm p {
+    margin: 5px 0;
+  }
+  
+  .containerForm span {
+    display: block;
+    margin-top: 5px;
+  }
+
+.platformsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-between;
+    background-color: rgba(6, 6, 55, 0.953);
+}
+
+.platform{
+    display: flex;
+    color: white;
+    width: 125px;
+    margin: 1px;
+    align-items: center;
+}
+
+.platformsError {
+    color: red;
+    width: 260px;
+    background-color: rgba(245, 245, 245, 0.823);
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  /* -----------Preview */
+.preview{
+    flex: 1;
+    border-radius: 10px;
+    background-color: rgb(127, 189, 183);
+    color: whitesmoke;
+    margin: 10px;    
+}
+.containerPreview{
+    width: 500px;
+    max-height: 900px;
+    clip-path: polygon(50% 0%, 100% 31%, 100% 100%, 0 100%, 0 31%);
+    box-shadow: 50px 50px 100px rgba(0,0,0,0.5);
+    background: linear-gradient(45deg, #5bbfab, #052e1188);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+}
+.imagePreview{
+    flex-grow:1;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.scrollableContainer {
+    height: 100%; /* set the desired height */
+    overflow: auto;    
+  }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    max-height: 110%;
+    
+}
+@media(max-width: 600px){.container{ width: 200px; height: 300px;   
+}}
+
+.pictures{
+    object-position: -55px ;
+    height: 360px;
+    width: fit-content;
+  }
+.platforms {
+    font-size: small;
+    height: 1em;
+
+}
+.container h3{
+    text-transform: capitalize;
+    font-size: 24px;  
+}
+
+.titleDetail{
+    text-transform: uppercase;
+    color: rgb(222, 221, 220);
+    margin: auto;
+    width: auto;
+}
+.description{
+    overflow: auto;    
+    height: 4em;
+}
+
+.genres{
+    font-size: 24px;
+}
+
+.buttonBack{
+    float: left;
+    margin: 3%;
+    width: 5%;
+}
+
+  
