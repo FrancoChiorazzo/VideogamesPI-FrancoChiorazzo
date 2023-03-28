@@ -5,6 +5,8 @@
 
 // const { videogames } = require("../data"); //<--Array to test the model
 const {Videogame, Genre} = require("../db") //<-- This is the model from the Database for videogame and for genre
+const {Op} = require ("sequelize")
+
 
     // Nombre.✔️
     // Imagen.✔️
@@ -35,7 +37,7 @@ const {Videogame, Genre} = require("../db") //<-- This is the model from the Dat
 
             //Validate that the name does not exist in the Database
             const nameValidation = await Videogame.findAll({
-                where: {name:name}
+                where: {name:{[Op.iLike]:name}}
             })
             if (nameValidation.length!==0) throw Error ("Name already exists in the DB")        
             

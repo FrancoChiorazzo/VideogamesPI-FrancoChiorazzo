@@ -7,12 +7,12 @@ import style from "./form.module.css"
 
 const Form = () => {
   const dispatch = useDispatch()
+  const genreWritten = React.useRef(null);
   useEffect(()=> {
     dispatch(getVideogames())
     dispatch(getGenres())
 
 }, [dispatch])
-
 
 //set Local state for handling information
 const [newGame,setNewGame] = useState({
@@ -60,14 +60,12 @@ function handleMultipleOptions(event) {
   setErrors(validate({...newGame, [event.target.name]:platforms}))
 }
 function clearInputGenre(variable) {
-  var s = document.getElementById("genres");
-  s.value = [];
+  genreWritten.current.value = ""
 }
 function handleClick(event) {
   event.preventDefault()
   
-  const genreInput = document.getElementById("genres");
-    const newGenre = genreInput.value;
+  const newGenre = genreWritten.current.value;
     setErrors(validate({...newGame, genre:event.target.value}))
 
   //if it is not a valid genre, do not add.
@@ -110,7 +108,7 @@ async function handleSubmit (event) {
   } else 
   {dispatch (addGame(newGame))
   alert("Game created")
-  window.location.reload()}
+  }
 }
   return (
     <div className={style.Form} >
@@ -150,7 +148,7 @@ async function handleSubmit (event) {
     <span>{errors.rating}</span>
     <br />
     <label htmlFor="Genres" id="genreSelector">Select genres </label>
-<input name="genres" id="genres" list="ListOfGenres"/>
+<input name="genres" ref={genreWritten} list="ListOfGenres"/>
 <datalist id="ListOfGenres">
   {genres?.map((genre)=>{
     return <option key={genre} value={genre} />})}

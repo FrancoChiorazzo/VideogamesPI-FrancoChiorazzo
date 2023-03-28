@@ -38,6 +38,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 videogames: {...state,videogames:[...state.videogames,action.payload]},
             }
+        
         default:
             return {...state};
     }

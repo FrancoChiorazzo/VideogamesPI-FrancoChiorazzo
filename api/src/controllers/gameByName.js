@@ -16,6 +16,7 @@ const getByName = async(name, origin, genreFilter, sort, page,pageSize) => {
 
     //apidata returns a promise
     while (apiGames.length < 100 && pageNum <= 10) {
+        console.log(api_key, "apikey");
     const {data} = await axios.get (`https://api.rawg.io/api/games?key=${api_key}&search=${name}`)
     apiGames.push(...data.results.map(element => ({
         id: element.id,
