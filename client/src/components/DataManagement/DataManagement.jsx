@@ -17,6 +17,12 @@ let page = props.page
 
     //Brings the information from the global state with useSelector
     let allVideogames = useSelector((state) => state.videogames.games)
+    let errors = useSelector((state) => state.errorMessage)
+
+    if (errors.trim().length>0) { 
+        alert (errors)
+    }
+    
     useEffect(()=> {
         dispatch(getGenres())
         dispatch(getVideogamesByName(name,origin, genreFilter, sort,page))

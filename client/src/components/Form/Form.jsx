@@ -59,9 +59,7 @@ function handleMultipleOptions(event) {
   setNewGame({ ...newGame, [property]:platforms });
   setErrors(validate({...newGame, [event.target.name]:platforms}))
 }
-function clearInputGenre(variable) {
-  genreWritten.current.value = ""
-}
+
 function handleClick(event) {
   event.preventDefault()
   
@@ -84,8 +82,8 @@ function handleClick(event) {
     genre: [...prevState.genre,newGenre]
   }))
   setErrors(validate({...newGame, genre:newGenre}))
-  }
-  clearInputGenre([])    
+  } 
+  genreWritten.current.value = "" 
 }
 function handleClear(event) {
   event.preventDefault()
@@ -108,6 +106,15 @@ async function handleSubmit (event) {
   } else 
   {dispatch (addGame(newGame))
   alert("Game created")
+  setNewGame({
+    name: "",
+    image: "",
+    description: "",
+    platforms: [],
+    released: "",
+    rating: 0,
+    genre: []
+  })
   }
 }
   return (

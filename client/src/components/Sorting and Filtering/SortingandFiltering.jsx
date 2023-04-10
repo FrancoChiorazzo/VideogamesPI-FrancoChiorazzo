@@ -32,6 +32,7 @@ function handleClick(genreName) {
         setSelectedFilters(aux)
     } else {
     //if it is not, add it to the former array of genres
+    setQueries({...queries, page:1});
     setSelectedFilters([...selectedFilters, genreName])
     }    
 }
@@ -45,7 +46,9 @@ function selectOrigin(event) {
 //--------------------------------------------searchBar---------------------------------------
 const handleNameChange = (event) => {
     event.preventDefault();
-    setQueries({...queries, inputName:event.target.value, page:1});
+    let fieldCompleted=event.target.value;
+    console.log(fieldCompleted,"name input field");
+    setQueries({...queries, inputName:fieldCompleted, page:1});
   };
 
 //------------------------------Sorting----------------------------------------------------
@@ -73,7 +76,7 @@ return(
         {/* Buttons of the Pages */}
             {
             TotalPagesArray.map(p =>{
-                return <button value={p} onClick={handleonClickPages}> {p} </button>
+                return <button key={p} value={p} onClick={handleonClickPages}> {p} </button>
                 })
             }
     </div>

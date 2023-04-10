@@ -6,6 +6,7 @@ import styles from "./home.module.css"
 export default function HomePage(props){
     
 let allVideogames = props.allVideogames
+// console.log(allVideogames, "received from datamanagement");
 
 
     return (

@@ -1,9 +1,10 @@
-import { ADD_GAME, GET_GENRES, GET_VIDEOGAMES, GET_VIDEOGAMES_BYID, GET_VIDEOGAMES_BYNAME, RESET_STATE } from "../action-types/action-types";
+import { ADD_GAME, GET_GENRES, GET_VIDEOGAMES, GET_VIDEOGAMES_BYID, GET_VIDEOGAMES_BYNAME, HANDLE_ERROR, RESET_STATE } from "../action-types/action-types";
 const initialState = {
     videogames: [],
     genres: [],
     videogamesDetail: {},
-    games: []
+    games: [],
+    errorMessage:""
 }
 
 const reducer = (state = initialState, action) => {
@@ -37,6 +38,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 videogames: {...state,videogames:[...state.videogames,action.payload]},
+            }
+        case HANDLE_ERROR:
+            console.log("Llega al Reducer ok");
+            return {
+                ...state,
+                errorMessage:action.payload
             }
         
         default:

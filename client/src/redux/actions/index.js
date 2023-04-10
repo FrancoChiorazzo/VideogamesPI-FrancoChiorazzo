@@ -1,4 +1,4 @@
-import { GET_GENRES, GET_VIDEOGAMES, GET_VIDEOGAMES_BYID, GET_VIDEOGAMES_BYNAME, RESET_STATE } from "../action-types/action-types";
+import { GET_GENRES, GET_VIDEOGAMES, GET_VIDEOGAMES_BYID, GET_VIDEOGAMES_BYNAME, RESET_STATE, HANDLE_ERROR } from "../action-types/action-types";
 import axios from "axios";
 
 export const getVideogames = () => {
@@ -13,13 +13,21 @@ export const getVideogames = () => {
 
 export const getVideogamesByName = (name, origin, genreFilter, sort, page) => {
     return async function(dispatch){
-        let response = await axios(`http://localhost:3001/videogames?name=${name||""}&origin=${origin||""}&genreFilter=${genreFilter||""}&sort=${sort||""}&page=${page}`)
-        console.log("GET","name",name, "origin",origin,"Genre",genreFilter,`http://localhost:3001/videogames?name=${name||""}&origin=${origin||""}&genreFilter=${genreFilter||""}&sort=${sort||""}&page=${page}`);
-
-        return dispatch ({
-            type: GET_VIDEOGAMES_BYNAME,
-            payload: response.data
-        })
+        try {
+            let response =  await axios(`http://localhost:3001/videogames?name=${name||""}&origin=${origin||""}&genreFilter=${genreFilter||""}&sort=${sort||""}&page=${page}`)
+            console.log("GET","name",name, "origin",origin,"Genre",genreFilter,`http://localhost:3001/videogames?name=${name||""}&origin=${origin||""}&genreFilter=${genreFilter||""}&sort=${sort||""}&page=${page}`);
+    
+            return dispatch ({
+                type: GET_VIDEOGAMES_BYNAME,
+                payload: response.data
+            })
+        } catch (error) {
+            return dispatch ({
+                type: HANDLE_ERROR,
+                payload: error.response.data.error
+            })
+        }
+      
     }
 }
 

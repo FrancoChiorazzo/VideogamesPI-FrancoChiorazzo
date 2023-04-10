@@ -14,7 +14,7 @@ const NavBar = (props) => {
       </div>
 
       <div className={style.logouthome}>
-      <Link to='/home'><input
+      <Link to='/home'><input 
                 type="image"
                 src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png"
                 id="image"
